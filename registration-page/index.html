@@ -1,0 +1,199 @@
+<html>
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="./css/style.css" rel="stylesheet" />
+    </head>
+    <body> 
+        <div class="registration">
+            <h1 class="login">Register</h1>
+            <form action="" class="form-design" >
+                <div class="name-box">
+                    <input class="box-design-name" type="text" placeholder="Name"  id="userName" onkeyup="userNamevalidation()"/>
+                    <i class="fa-solid fa-user"></i>
+                    <span id="nameError" style="display:none;">Enter your Name</span>
+                    <span id="nameError2" style="display:none;">Enter Valid Name</span>
+
+                </div>
+                <div class="email-box">
+                    <input class="box-design-email" type="email" placeholder="Email"   id="userEmail" onkeyup="userEmailvalidation()"/>
+                    <i class="fa-solid fa-envelope" id="email-icon"></i>
+                </div>
+                <div class="password-box">
+                    <input class="box-design-password" type="password" placeholder="password" onkeyup="userPasswordvalidation()"  id="userPassword"/>
+                    <i class="fa-solid fa-lock " id="locked" onclick="lockValidation()"></i>
+                    <i class="fa-solid fa-lock-open" id="lockopen" style="display:none;"  onclick="openlockValidation()"></i>
+                </div>
+                <div class="repeat-password-box">
+                    <input class="box-design-repeatpassword" type="password" placeholder="repeat password" onkeyup="userRepeatPasswordvalidation()"  id="userRepeatPassword" />
+                    <i class="fa-solid fa-key" id="key" onclick="keyValidation()"></i>
+                </div>    
+
+
+
+                <div class="remember-box">
+                    <label><input type="checkbox" />I agree all statements in Terms of service</label>
+                </div>
+
+                <div class="signin-box">
+                    <input class="box-design-signin" type="button" value="Sign Up" id="userSignin" onclick="userFormValidation()"/>
+                </div>
+                <div class="signup-box">
+                    <span class="signup-design">Already have an account? <a href="" class="please">Sign in</a>
+                    </span>
+                    </span>
+                </div>
+
+            </form>
+        </div>
+    </body>
+    <script>
+        function userFormValidation(){
+            var userNameValue=document.getElementById('userName').value.trim();
+            var userEmailValue=document.getElementById('userEmail').value.trim();
+            var passwordValue=document.getElementById('userPassword').value.trim();
+            var repeatPassword=document.getElementById('userRepeatPassword').value.trim();
+            var emailPattern= /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            var passwordPattern=/^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+            userNamevalidation()
+            userEmailvalidation()
+            userPasswordvalidation()
+            userRepeatPasswordvalidation()
+            if(userNameValue.length>=5)
+            {
+                if(emailPattern.test(userEmailValue))
+                {
+                    if(passwordPattern.test(passwordValue))
+                    {
+                        if(repeatPassword==passwordValue)
+                        {
+
+                            alert('Registration Successful');
+                        }
+
+                    }
+                }
+            }
+        }
+        function userNamevalidation(){
+            var userNameValue=document.getElementById('userName').value.trim();
+            console.log(userNameValue);
+           if(userNameValue)
+            {
+                   if(userNameValue.length>=3)
+                   {
+                    document.getElementById('userName').style="border:2px solid green;"
+                   }
+                   else{
+                    document.getElementById('userName').style="border:2px solid red;"
+                   }
+            }
+            else
+            {
+                document.getElementById('userName').style="border:2px solid red;"
+                //document.getElementById('nameError').style="display:block;color:red;"
+
+             }
+        }
+        function userEmailvalidation(){
+            var userEmailValue=document.getElementById('userEmail').value.trim();
+            var emailPattern= /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            if(userEmailValue)
+            {
+                if(emailPattern.test(userEmailValue))
+                {
+                    document.getElementById('userEmail').style="border:2px solid green;"
+
+                }
+                else{
+                    document.getElementById('userEmail').style="border:2px solid red;"
+
+                }
+            }
+            else
+            {
+                document.getElementById('userEmail').style="border:2px solid red;"
+
+            }
+        }
+        function userPasswordvalidation(){
+            var passwordValue=document.getElementById('userPassword').value.trim();
+            var passwordPattern=/^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+            if(passwordValue)
+            {
+                if(passwordPattern.test(passwordValue))
+                {
+                    document.getElementById('userPassword').style="border:2px solid green;"
+
+                }
+                else{
+                    document.getElementById('userPassword').style="border:2px solid red;"
+
+                }
+            }
+            else{
+                document.getElementById('userPassword').style="border:2px solid red;"           
+            }
+        }
+        function lockValidation()
+        {
+            console.log("vjhvjhvjh");
+            var passwordView=document.getElementById('userPassword').value;
+            var passwordType=document.getElementById('userPassword').type;
+            if(passwordType=="password")
+            {
+                document.getElementById('userPassword').type="text";
+                document.getElementById('lockopen').style="display:block;"
+                document.getElementById('locked').style="display:none;"
+
+
+            }
+        }
+        function openlockValidation(){
+            var passwordType=document.getElementById('userPassword').type;
+            if(passwordType=="text")
+                {
+                document.getElementById('userPassword').type="password";
+                document.getElementById('lockopen').style="display:none;"
+                document.getElementById('locked').style="display:block;"
+                }
+        }
+
+        function userRepeatPasswordvalidation(){
+            var passwordValue=document.getElementById('userPassword').value.trim();
+            var repeatPassword=document.getElementById('userRepeatPassword').value.trim();
+            console.log(",,,,,",repeatPassword);
+            if(repeatPassword)
+            {
+                document.getElementById('userRepeatPassword').style="border:2px solid green;" 
+        
+                if(repeatPassword==passwordValue)
+                {
+                    document.getElementById('userRepeatPassword').style="border:2px solid green;" 
+                }
+                else{
+                    document.getElementById('userRepeatPassword').style="border:2px solid red;" 
+
+                }
+            }
+            else{
+                document.getElementById('userRepeatPassword').style="border:2px solid red;" 
+
+            }   
+
+        }
+        function keyValidation(){
+            var repeatPassword=document.getElementById('userRepeatPassword').type;
+            if(repeatPassword=="password")
+            {
+                document.getElementById('userRepeatPassword').type="text";
+            }
+            else{
+                document.getElementById('userRepeatPassword').type="password";
+
+            }
+
+        }
+    </script>
+    </html>

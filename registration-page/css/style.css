@@ -1,0 +1,203 @@
+body{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 20px;
+    background-image: url(../images/shadow.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.registration{
+    background: transparent;
+    width: 500px;
+    height: 520px;
+    border: 1px solid black;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+}
+.login{
+    text-align: center;
+    position: relative;
+    top: 15px;
+    color: white;
+}
+#locked{
+    color: white;
+    position: absolute;
+    top: 251px;
+    right: 90px;
+}
+#lockopen{
+    color: white;
+    position: absolute;
+    top: 251px;
+    right: 90px;
+}
+#key{
+    color: white;
+    position: absolute;
+    top: 317px;
+    right: 87px;
+}
+#email-icon{
+    color: white;
+    position: absolute;
+    top: 184px;
+    right: 90px;
+}
+.name-box{
+
+}
+.box-design-name{
+    height: 35px;
+    width: 78%;
+    border-radius: 20px;
+    padding-left: 15px;
+    text-align: justify;
+    color: #100f0f;
+    position: relative;
+    left: 45px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    outline: 0;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+.box-design-email{
+    height: 35px;
+    width: 78%;
+    border-radius: 20px;
+    padding-left: 15px;
+    text-align: justify;
+    color: #100f0f;
+    position: relative;
+    left: 45px;
+    margin-top: 11px;
+    outline: 0;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+.box-design-password{
+    height: 35px;
+    width: 78%;
+    border-radius: 20px;
+    padding-left: 15px;
+    text-align: justify;
+    color: #100f0f;
+    position: relative;
+    left: 45px;
+    margin-top: 11px;
+    outline: 0;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+.box-design-repeatpassword{
+    height: 35px;
+    width: 78%;
+    border-radius: 20px;
+    padding-left: 15px;
+    text-align: justify;
+    color: #100f0f;
+    position: relative;
+    left: 45px;
+    margin-top: 11px;
+    outline: 0;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+.box-design-signin{
+    height: 35px;
+    width: 78%;
+    border-radius: 20px;
+    padding-left: 15px;
+    text-align: justify;
+    color: #100f0f;
+    position: relative;
+    left: 45px;
+    margin-top: 20px;
+    outline: 0;
+    color: black;
+    font-size: 18;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid white;
+}
+.box-design-signin:hover{
+  background:rgb(0, 89, 255);
+  color: white;
+}
+.remember-box{
+    display: inline-block;
+    margin-left: 45px;
+    margin-top: 10px;
+    color: white;
+}
+.forgot-box{
+    display: inline-block;
+    margin-left: 159px;
+    color: white;
+}
+.name-box input::placeholder{
+    color: white;
+    
+}
+.email-box input::placeholder{
+    color: white;
+}
+.password-box input::placeholder{
+    color: white;
+}
+.repeat-password-box input::placeholder{
+    color: white;
+}
+.fa-solid{
+    color: white;
+    position: relative;
+    top: 1px;
+}
+.signup-box{
+    text-align: center;
+    position: relative;
+    top: 18px;
+    color: white;
+    letter-spacing: 1;
+}
+.signin-design{
+
+}
+.please{
+    color: rgb(94, 255, 0);
+    text-decoration: none;
+}
+.forgot-design{
+    text-decoration:none ;
+    color: white;
+}
+.email-box{
+ margin-top: 20px;
+}
+.password-box{
+    margin-top: 20px;
+
+}
+.repeat-password-box{
+    margin-top: 20px;
+}
+.remember-box{
+    margin-top: 45px;
+}
+.forgot-box{
+    margin-top: 20px;
+
+}
+.signin-box{
+
+}
+.signup-box{
+
+}
